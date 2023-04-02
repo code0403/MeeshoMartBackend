@@ -16,15 +16,15 @@ app.use(express.json())
 app.use(cors())
 
 
+app.use(auth)
 app.use("/products", productRouter)
 app.use("/user", userRouter)
 app.use("/cart", CartproductRouter)
 app.use("/order" , orderRouter)
-// app.use(auth)
 
 
 
-app.listen(process.env.PORT, async () => {
+app.listen(process.env.PORT || 8080, async () => {
     try {
         await connection
         console.log({"msg" : "Connected to MongoDb"})
