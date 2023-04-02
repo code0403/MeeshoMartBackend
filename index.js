@@ -2,12 +2,13 @@ const express = require("express");
 const cors = require("cors")
 const dotenv = require("dotenv");
 dotenv.config();
-const { auth } = require("../Backend/middlewares/auth")
+
 const { connection } = require("./config/db");
 const { productRouter } = require("./routes/products.routes");
 const { userRouter } = require("./routes/user.routes");
 const { CartproductRouter } = require("./routes/cartProducts.routes");
 const { orderRouter } = require("./routes/orderList.routes");
+const { auth } = require("./middlewares/auth");
 
 
 const app = express()
